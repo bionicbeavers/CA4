@@ -1,28 +1,30 @@
-version: '3'
+version: '3.8'
 services:
-  flask-app:
-    image: python:3.8-slim
-    container_name: flask-app
-    volumes:
-      - ./app:/app
-    ports:
-      - "5000:5000"
-    environment:
-      - MYSQL_HOST=mysql-db
-      - MYSQL_PORT=3306
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=root_password
-      - MYSQL_DB=mydb
-    command: ["python", "app.py"]
-    depends_on:
-      - mysql-db
+    db:
+      image: "CA4-DB:latest"
+      container_name: mysql-db
+      volumes:
+        - my-db:/var/lib/mysql/data
+      ports:
+        - 3300:3300
+      environment:
+          - MYSQL_USER: root
+          - MYSQL_ROOT_PASSWORD: tiger123
+          - MYSQL_PASSWORD: tiger123
+          - MYSQL_DATABASE: users
 
-  mysql-db:
-    image: mysql:8.0
-    container_name: mysql-db
-    volumes:
-      - ./mysql-data:/var/lib/mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=root_password
-      - MYSQL_DATABASE=mydb
-
+    flask-app:
+      image: CA4-SERVER:latest
+      container_name: flask-app
+      ports:
+        - "5000:5000"
+      environment:
+          - MYSQL_HOST: mysql-db
+          - MYSQL_PORT: 3300
+          - MYSQL_USER: root
+          - MYSQL_PASSWORD: tiger123
+          - MYSQL_DB: users
+      volumes:
+        - ./app:/app
+      depends_on:
+        - mysql-db
