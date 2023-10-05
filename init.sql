@@ -10,9 +10,8 @@ CREATE TABLE users (
 
 INSERT INTO users (member, name, id, password)
 VALUES
-    ('Member1', 'User One', 'user1', 'password1'),
-    ('Member2', 'User Two', 'user2', 'password2'),
-    ('Member3', 'User Three', 'user3', 'password3'),
-    ('Member4', 'User Four', 'user4', 'password4');
+    ('Member1', 'Ahmed Iqbal', 'i200780', 'password1'),
+    ('Member2', 'Hisam Savul', 'i200447', 'password2'),
+    ('Member3', 'Abdul Mannan', 'i190611', 'password3'),
 
 commit;
