@@ -1,7 +1,7 @@
 version: '3'
 services:
     db:
-      image: "CA4-DB:latest"
+      image: "CA4-db:latest"
       container_name: mysql-db
       volumes:
         - my-db:/var/lib/mysql/data
@@ -13,7 +13,7 @@ services:
           - MYSQL_DATABASE: users
 
     flask-app:
-      image: CA4-SERVER:latest
+      image: CA4-Server:latest
       container_name: flask-app
       ports:
         - "5000:5000"
