@@ -1,9 +1,17 @@
-FROM mysql:8.0
+#Using python as base image
+FROM python:3.8-slim
 
-EXPOSE 3300
+#Set up the working directory in the container
+WORKDIR /app
 
-ENV MYSQL_ROOT_PASSWORD=tiger123
-ENV MYSQL_DATABASE=root
+#Copy current directory contents to container
+COPY . /app
 
+#Installing dependencies
+RUN pip install -r requirements.txt
 
-COPY init.sql /docker-entrypoint-initdb.d/
+#Exposing the port which flask application will run on
+EXPOSE 5000
+
+#Running the Flash app
+CMD ["python", "app.py"]
