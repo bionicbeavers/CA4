@@ -3,8 +3,6 @@ services:
     db:
       image: "CA4-db:latest"
       container_name: mysql-db
-      volumes:
-        - my-db:/var/lib/mysql/data
       ports:
         - 3300:3300
       environment:
@@ -18,8 +16,6 @@ services:
         - "5000:5000"
       environment:
         - DATABASE_URI=mysql://root:tiger123@db/users
-      volumes:
-        - ./app:/app
       depends_on:
         - db
         
