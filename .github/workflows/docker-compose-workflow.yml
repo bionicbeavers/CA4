@@ -1,5 +1,4 @@
 name: I200780 Task - Docker Compose 
-
 on:
   push:
     branches:
