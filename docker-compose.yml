@@ -27,3 +27,8 @@ services:
         - ./app:/app
       depends_on:
         - mysql-db
+
+networks:
+  default:
+    external:
+      name: app-db-network
