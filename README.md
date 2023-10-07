@@ -1,11 +1,15 @@
 # MlOps Activity #4 -> CA4
 [![I200780 Task - Docker Compose](https://github.com/bionicbeavers/CA4/actions/workflows/docker-compose-workflow.yml/badge.svg)](https://github.com/bionicbeavers/CA4/actions/workflows/docker-compose-workflow.yml)
 
-(i200447)
+# Members and their Contributions
+Hissam Savul (i200780) -> Member 1
+**Composing and connecting db with flask application with docker-compose 
+
+Ahmed Iqbal (i200447) -> Member 2
 **Link for Server image (Flask) on DockerHub**
 https://hub.docker.com/repository/docker/bionicbeavers/ca4-server/general
 
-(i190611)
+Abdul Manan (i190611) -> Member 
 **Link for db image (mysql) on DockerHub**
 https://hub.docker.com/repository/docker/bionicbeavers/ca4-db/general
 
