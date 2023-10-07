@@ -17,11 +17,11 @@ services:
       ports:
         - "5000:5000"
       environment:
-        - DATABASE_URI=mysql://root:tiger123@mysql-db/users
+        - DATABASE_URI=mysql://root:tiger123@db/users
       volumes:
         - ./app:/app
       depends_on:
-        - mysql-db
+        - db
         
 networks:
   default:
