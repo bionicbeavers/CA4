@@ -9,7 +9,21 @@ https://hub.docker.com/repository/docker/bionicbeavers/ca4-server/general
 **Link for db image (mysql) on DockerHub**
 https://hub.docker.com/repository/docker/bionicbeavers/ca4-db/general
 
-(i200780)
 # Docker Compose Setup
-#STEP #1: Cloning bionicbeavers Repository
+# STEP #1: Cloning bionicbeavers Repository
 git clone https://github.com/bionicbeavers/CA4.git && cd CA4
+
+# STEP #2: Enivronment Setup
+echo "DATABASE_URL: mysql://root:tiger123@db:3300/users" > .env to creare environment
+
+# STEP #3: Docker Network creation for flask and db inter-container connectivity
+docker network create app-db-network
+        
+# STEP #4: Build and run Docker Containers
+docker-compose up --build -d
+
+# STEP #5: 
+go to http://localhost:5000/ to access the flask app.
+
+# STEP #6:
+docker-compose down
