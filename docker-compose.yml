@@ -8,7 +8,7 @@ services:
       ports:
         - 3300:3300
       environment:
-          - MYSQL_USER=root
+          - MYSQL_USER: "root"
           - MYSQL_ROOT_PASSWORD: tiger123
           - MYSQL_DATABASE: users
 
@@ -18,7 +18,7 @@ services:
       ports:
         - "5000:5000"
       environment:
-          - MYSQL_HOST=mysql-db
+          - MYSQL_HOST: "mysql-db"
           - MYSQL_PORT: 3300
           - MYSQL_USER: root
           - MYSQL_PASSWORD: tiger123
