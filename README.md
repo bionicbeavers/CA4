@@ -17,23 +17,20 @@ https://hub.docker.com/repository/docker/bionicbeavers/ca4-db/general
 ## STEP #1: Cloning bionicbeavers Repository
 git clone https://github.com/bionicbeavers/CA4.git && cd CA4
 
-## STEP #2: Enivronment Setup
-echo "DATABASE_URL: mysql://root:tiger123@db:3300/users" > .env to creare environment
-
-## STEP #3: Docker Network creation for flask and db inter-container connectivity
+## STEP #2: Docker Network creation for flask and db inter-container connectivity
 docker network create app-db-network
         
-## STEP #4: Build Containers
+## STEP #3: Build Containers
 docker-compose build
 
-## STEP #6: Run Containers
+## STEP #4: Run Containers
 docker-compose up -d
 
-## STEP #7: Run flask app on local host
+## STEP #5: Run flask app on local host
 go to http://localhost:5000/ to access the flask app.
 
-## STEP #8: stop docker-compose to stop containers
+## STEP #6: stop docker-compose to stop containers
 docker-compose down
 
-## STEP #9: Removing Network
+## STEP #7: Removing Network
 docker network rm app-db-network
