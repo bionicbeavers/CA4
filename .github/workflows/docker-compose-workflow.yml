@@ -1,38 +1,35 @@
 name: I200780 Task - Docker Compose 
+
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout Repository
+      - name: Checkout Code
         uses: actions/checkout@v2
-        
-      - name: Set up Docker Compose
-        run: |
-          sudo apt-get update
-          sudo apt-get install docker-compose
           
-      - name: Clone Repository
+      - name: Cloning bionicbeavers Repository
         run: |
           git clone https://github.com/bionicbeavers/CA4.git
           cd CA4
           
-      - name: Set up Environment Variables
+      - name: Mysql Database connectivity
         run: |
           echo "DATABASE_URL: mysql://root:tiger123@db:3300/users" > .env
           
-      - name: Create Docker Network
+      - name: Docker Network creation for flask and db inter-container connectivity
         run: docker network create app-db-network
         
-      - name: Log in to Docker Hub
-        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+      - name: Docker Hub Login
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
          
-      - name: Build and Start Docker Containers
+      - name: Build and run Docker Containers
         run: docker-compose up --build -d
         
- 
