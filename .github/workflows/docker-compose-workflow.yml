@@ -25,6 +25,9 @@ jobs:
       - name: Log in to Docker Hub
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
         
-      - name: Build and run Docker Containers
-        run: docker-compose up --build -d
+      - name: Build docker Containers
+        run: docker-compose build
+
+      - name: run docker Containers
+        run: docker-compose up -d
         
