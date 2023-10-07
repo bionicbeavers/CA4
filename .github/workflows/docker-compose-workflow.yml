@@ -16,7 +16,8 @@ jobs:
         run: git clone https://github.com/bionicbeavers/CA4.git && cd CA4
             
       - name: Mysql Database connectivity
-        run: echo "DATABASE_URL: mysql://root:tiger123@db:3300/users" > .env
+        run: |
+          echo "DATABASE_URL: mysql://root:tiger123@db:3300/users" > .env
           
       - name: Docker Network creation for flask and db inter-container connectivity
         run: docker network create app-db-network
