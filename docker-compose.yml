@@ -8,16 +8,20 @@ services:
       environment:
           MYSQL_ROOT_PASSWORD: tiger123
           MYSQL_DATABASE: users
-
+      networks:
+        - app-db-network
+        
     flask-app:
       image: bionicbeavers/ca4-server:latest
       container_name: flask-app
       ports:
         - "5000:5000"
       environment:
-        - DATABASE_URI=mysql://root:tiger123@db/users
+        DATABASE_URL: mysql://root:tiger123@db:3300/users
       depends_on:
         - db
+      networks:
+        - app-db-network
         
 networks:
   default:
