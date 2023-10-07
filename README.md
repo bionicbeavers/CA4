@@ -13,7 +13,7 @@ Abdul Manan (i190611) -> Member
 **Link for db image (mysql) on DockerHub**
 https://hub.docker.com/repository/docker/bionicbeavers/ca4-db/general
 
-# Docker Compose Setup
+# Running the Docker Compose Stack (you should have docker-compose as a pre-requisite):
 ## STEP #1: Cloning bionicbeavers Repository
 git clone https://github.com/bionicbeavers/CA4.git && cd CA4
 
