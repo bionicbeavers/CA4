@@ -24,7 +24,7 @@ jobs:
           
       - name: Set up Environment Variables
         run: |
-          echo "DATABASE_URI=mysql://root:tiger123@db/users" > .env
+          echo "DATABASE_URL: mysql://root:tiger123@db:3300/users" > .env
           
       - name: Create Docker Network
         run: docker network create app-db-network
