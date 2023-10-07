@@ -22,7 +22,11 @@ jobs:
         run: |
           git clone https://github.com/bionicbeavers/CA4.git
           cd CA4
-
+          
+      - name: Set up Environment Variables
+        run: |
+          echo "DATABASE_URI=mysql://root:tiger123@mysql-db/users" > .env
+          
       - name: Create Docker Network
         run: docker network create app-db-network
         
