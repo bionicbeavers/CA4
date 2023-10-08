@@ -24,7 +24,7 @@ docker network create app-db-network
 docker-compose build
 
 ## STEP #4: Run Containers
-docker-compose up -d
+`docker-compose up -d`
 
 ## STEP #5: Run flask app on local host
 go to http://localhost:5000/ to access the flask app.
