@@ -6,12 +6,12 @@ Hissam Savul (i200780) -> Member 1
 <br>Composing and connecting db with flask application with docker-compose
 
 Ahmed Iqbal (i200447) -> Member 2
-**Link for Server image (Flask) on DockerHub**
-https://hub.docker.com/repository/docker/bionicbeavers/ca4-server/general
+<br>**Link for Server image (Flask) on DockerHub**
+<br>https://hub.docker.com/repository/docker/bionicbeavers/ca4-server/general
 
 Abdul Manan (i190611) -> Member 
-**Link for db image (mysql) on DockerHub**
-https://hub.docker.com/repository/docker/bionicbeavers/ca4-db/general
+<br>**Link for db image (mysql) on DockerHub**
+<br>https://hub.docker.com/repository/docker/bionicbeavers/ca4-db/general
 
 # Running the Docker Compose Stack (you should have docker-compose as a pre-requisite):
 ## STEP #1: Cloning bionicbeavers Repository
